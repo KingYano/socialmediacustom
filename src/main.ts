@@ -1,5 +1,6 @@
-import './assets/main.scss'
+import './assets/main.scss';
 import 'remixicon/fonts/remixicon.css';
+import './assets/tailwind.css';
 
 import { createApp } from 'vue'
 import App from './App.vue'
