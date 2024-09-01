@@ -1,6 +1,6 @@
 <template>
   <div class="mb-4">
-    <label class="block mb-2 font-semibold">Text Color</label>
+    <label class="block mb-2 font-semibold">Couleur du texte</label>
     <div class="flex space-x-4">
       <button
           v-for="option in colorOptions"

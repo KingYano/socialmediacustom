@@ -5,7 +5,7 @@
       <button
           v-for="option in formatOptions"
           :key="option.value"
-          @click="$emit('update:modelValue', option.value as 'tiktok' | 'instaStory' | 'instaPortrait')"
+          @click="$emit('update:modelValue', option.value as 'tiktok' | 'instaPortrait')"
           :class="['px-4 py-2 rounded', modelValue === option.value ? 'bg-blue-500 text-white' : 'bg-gray-200']"
       >
         {{ option.label }}
@@ -18,16 +18,15 @@
   import { defineProps, defineEmits } from 'vue';
 
   const props = defineProps<{
-    modelValue: 'tiktok' | 'instaStory' | 'instaPortrait'
+    modelValue: 'tiktok' | 'instaPortrait'
   }>();
 
   defineEmits<{
-    (e: 'update:modelValue', value: 'tiktok' | 'instaStory' | 'instaPortrait'): void
+    (e: 'update:modelValue', value: 'tiktok' | 'instaPortrait'): void
   }>();
 
   const formatOptions = [
-    { value: 'tiktok' as const, label: 'TikTok (9:16)' },
-    { value: 'instaStory' as const, label: 'Instagram Story (9:16)' },
+    { value: 'tiktok' as const, label: 'TikTok / Instagram (9:16)' },
     { value: 'instaPortrait' as const, label: 'Instagram Portrait (4:5)' }
   ];
 </script>

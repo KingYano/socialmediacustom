@@ -10,7 +10,7 @@
         :showDescription="state.showDescription"
         :titleFontSize="state.titleFontSize"
         :descriptionFontSize="state.descriptionFontSize"
-        @update:format="state.format = $event as 'tiktok' | 'instaStory' | 'instaPortrait'"
+        @update:format="state.format = $event as 'tiktok' | 'instaPortrait'"
         @update:title="state.title = $event"
         @update:description="state.description = $event"
         @update:textColor="state.textColor = $event as 'white' | 'black'"
@@ -42,8 +42,8 @@
     showDescription: true,
     titleFontSize: 24,
     descriptionFontSize: 18,
-    selectedImage: '/api/placeholder/800/600',
-    format: 'tiktok' as 'tiktok' | 'instaStory' | 'instaPortrait'
+    selectedImage: '',
+    format: 'tiktok' as 'tiktok' | 'instaPortrait'
   });
 
   const handleDownload = () => {

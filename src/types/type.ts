@@ -7,5 +7,6 @@ export interface ImageCustomizerState {
     titleFontSize: number;
     descriptionFontSize: number;
     selectedImage: string;
-    format: 'tiktok' | 'instaStory' | 'instaPortrait';
+    format: 'tiktok' | 'instaPortrait';
+    textPosition: 'top' | 'bottom';
 }
