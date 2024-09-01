@@ -25,6 +25,13 @@
         :max="26"
     />
 
+    <RadioButtonGroup
+        label="Position du texte"
+        :options="['top', 'bottom']"
+        :modelValue="textPosition"
+        @update:modelValue="$emit('update:textPosition', $event)"
+    />
+
     <button @click="$emit('download')" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 flex items-center justify-center mt-4">
       <span class="mr-2">Télécharger l'image</span>
     </button>
@@ -32,34 +39,37 @@
 </template>
 
 <script setup lang="ts">
-  import FormatSelector from './../FormatSelection/FormatSelection.vue';
-  import TextInput from './../TextInput/TextInput.vue';
-  import ColorSelector from './../ColorSelector/ColorSelector.vue';
-  import ToggleSwitch from './../ToggleSwitch/ToggleSwitch.vue';
-  import FontSizeSlider from './../FontSizeSlider/FontSizeSlider.vue';
+import FormatSelector from './../FormatSelection/FormatSelection.vue';
+import TextInput from './../TextInput/TextInput.vue';
+import ColorSelector from './../ColorSelector/ColorSelector.vue';
+import ToggleSwitch from './../ToggleSwitch/ToggleSwitch.vue';
+import FontSizeSlider from './../FontSizeSlider/FontSizeSlider.vue';
+import RadioButtonGroup from './../RadioButtonGroup/RadioButtonGroup.vue';
 
-  defineProps<{
-    format: string;
-    title: string;
-    description: string;
-    textColor: string;
-    showTitle: boolean;
-    showDescription: boolean;
-    titleFontSize: number;
-    descriptionFontSize: number;
-  }>();
+defineProps<{
+  format: string;
+  title: string;
+  description: string;
+  textColor: string;
+  showTitle: boolean;
+  showDescription: boolean;
+  titleFontSize: number;
+  descriptionFontSize: number;
+  textPosition: 'top' | 'bottom';
+}>();
 
-  defineEmits<{
-    (e: 'update:format', value: string): void;
-    (e: 'update:title', value: string): void;
-    (e: 'update:description', value: string): void;
-    (e: 'update:textColor', value: string): void;
-    (e: 'update:showTitle', value: boolean): void;
-    (e: 'update:showDescription', value: boolean): void;
-    (e: 'update:titleFontSize', value: number): void;
-    (e: 'update:descriptionFontSize', value: number): void;
-    (e: 'download'): void;
-  }>();
+defineEmits<{
+  (e: 'update:format', value: string): void;
+  (e: 'update:title', value: string): void;
+  (e: 'update:description', value: string): void;
+  (e: 'update:textColor', value: string): void;
+  (e: 'update:showTitle', value: boolean): void;
+  (e: 'update:showDescription', value: boolean): void;
+  (e: 'update:titleFontSize', value: number): void;
+  (e: 'update:descriptionFontSize', value: number): void;
+  (e: 'update:textPosition', value: 'top' | 'bottom'): void;
+  (e: 'download'): void;
+}>();
 </script>
 
 <style lang="scss">
