@@ -20,8 +20,6 @@
 </template>
 
 <script lang="ts" setup>
-  import { defineProps, defineEmits } from 'vue';
-
   defineProps<{
     modelValue: 'white' | 'black'
   }>();

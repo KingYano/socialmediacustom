@@ -15,14 +15,8 @@
 </template>
 
 <script lang="ts" setup>
-  import { defineProps, defineEmits } from 'vue';
-
-  const props = defineProps<{
+  defineProps<{
     modelValue: 'tiktok' | 'instaPortrait'
-  }>();
-
-  defineEmits<{
-    (e: 'update:modelValue', value: 'tiktok' | 'instaPortrait'): void
   }>();
 
   const formatOptions = [

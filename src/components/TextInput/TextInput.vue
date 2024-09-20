@@ -18,16 +18,10 @@
 </template>
 
 <script lang="ts" setup>
-  import { defineProps, defineEmits } from 'vue';
-
   defineProps<{
     label: string;
     modelValue: string;
     textarea?: boolean;
-  }>();
-
-  defineEmits<{
-    (e: 'update:modelValue', value: string): void
   }>();
 </script>
 

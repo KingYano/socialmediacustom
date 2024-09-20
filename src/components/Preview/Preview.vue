@@ -8,7 +8,7 @@
       </div>
       <label class="absolute top-4 right-4 cursor-pointer">
         <input type="file" class="hidden" @change="handleImageUpload" accept="image/*" />
-        <div class="bg-white  shadow-lg rounded-full hover:bg-gray-100">
+        <div class="bg-white shadow-lg rounded-full hover:bg-gray-100">
           <span> <i class="ri-upload-line"></i> </span>
         </div>
       </label>
