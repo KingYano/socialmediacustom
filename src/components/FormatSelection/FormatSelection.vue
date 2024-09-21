@@ -6,7 +6,7 @@
           v-for="option in formatOptions"
           :key="option.value"
           @click="$emit('update:modelValue', option.value as 'tiktok' | 'instaPortrait')"
-          :class="['px-4 py-2 rounded', modelValue === option.value ? 'bg-blue-500 text-white' : 'bg-gray-200']"
+          :class="['px-4 py-2 rounded', modelValue === option.value ? 'bg-purple-800 text-white' : 'bg-gray-200']"
       >
         {{ option.label }}
       </button>

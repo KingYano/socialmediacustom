@@ -27,12 +27,12 @@
 
     <RadioButtonGroup
         label="Position du texte"
-        :options="['top', 'bottom']"
+        :options="['bottom', 'top']"
         :modelValue="textPosition"
         @update:modelValue="$emit('update:textPosition', $event)"
     />
 
-    <button @click="$emit('download')" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 flex items-center justify-center mt-4">
+    <button @click="$emit('download')" class="w-full bg-purple-800 text-white p-2 rounded hover:bg-purple-600 flex items-center justify-center mt-4">
       <span class="mr-2">Télécharger l'image</span>
     </button>
   </div>
