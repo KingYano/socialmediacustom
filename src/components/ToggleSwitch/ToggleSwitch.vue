@@ -16,7 +16,7 @@
             :class="{ 'translate-x-4': modelValue }"
         ></span>
       </div>
-      <span class="ml-3 text-gray-700 font-medium leading-none">{{ label }}</span> <!-- Ajout de leading-none -->
+      <span class="ml-3 text-gray-700 font-medium leading-none">{{ label }}</span>
     </label>
   </div>
 </template>

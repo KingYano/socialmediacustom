@@ -6,9 +6,8 @@
         <h1 v-if="state.showTitle" :style="{ fontSize: `${state.titleFontSize}px` }" class="font-bold mb-2">{{ state.title }}</h1>
         <p v-if="state.showDescription" :style="{ fontSize: `${state.descriptionFontSize}px` }">{{ state.description }}</p>
       </div>
-      <!-- Affichage conditionnel du bouton d'import d'image -->
-      <label v-if="showUploadButton" class="absolute top-4 right-4 cursor-pointer">
-        <input type="file" class="hidden" @change="handleImageUpload" accept="image/*" />
+      <label  v-if="showUploadButton" class="absolute top-4 right-4 cursor-pointer">
+        <input title="Importez une image" type="file" class="hidden" @change="handleImageUpload" accept="image/*" />
         <div class="bg-white text-black shadow-lg rounded-full p-1 hover:bg-gray-100 flex items-center justify-center w-8 h-8">
           <span><i class="ri-upload-line"></i></span>
         </div>
