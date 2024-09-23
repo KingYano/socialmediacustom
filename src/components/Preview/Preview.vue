@@ -50,11 +50,11 @@
   function getFormatDimensions(format: string) {
     switch (format) {
       case 'portrait16_9':
-        return { width: 360, height: 640 }; // 16:9 en mode portrait
+        return { width: 360, height: 640 }; // 16:9
       case 'instaPortrait':
-        return { width: 480, height: 600 }; // 4:5 en mode portrait
+        return { width: 480, height: 600 }; // 4:5
       default:
-        return { width: 360, height: 640 }; // Par défaut, 16:9 en mode portrait
+        return { width: 360, height: 640 };
     }
   }
 

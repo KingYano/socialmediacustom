@@ -11,28 +11,48 @@
         <p class="mt-3">Pas besoin d'être designer pour créer des visuels professionnels !</p>
       </div>
       <div class="flex items-center mb-4">
-        <ToggleSwitch label="Ne plus afficher ce message à chaque ouverture"  v-model="dontShowAgain" />
+        <ToggleSwitch label="Ne plus afficher ce message à chaque ouverture" v-model="dontShowAgain"/>
       </div>
-      <button @click="closePopup" class="bg-purple-800 text-white px-4 py-2 rounded hover:bg-purple-600 transition">Commencer</button>
+      <button @click="closePopup" class="bg-purple-800 text-white px-4 py-2 rounded hover:bg-purple-600 transition">
+        Commencer
+      </button>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-  import { defineComponent, ref, onMounted } from 'vue';
+  import { defineComponent, ref, watch, onMounted, onUnmounted } from 'vue';
   import ToggleSwitch from "@/components/ToggleSwitch/ToggleSwitch.vue";
 
   export default defineComponent({
-    components: {ToggleSwitch},
+    components: { ToggleSwitch },
     setup() {
       const showPopup = ref(true);
       const dontShowAgain = ref(false);
+
+      const toggleBodyScroll = (isPopupOpen: boolean) => {
+        if (isPopupOpen) {
+          document.body.classList.add('overflow-hidden');
+        } else {
+          document.body.classList.remove('overflow-hidden');
+        }
+      };
+
+      watch(showPopup, (newVal) => {
+        toggleBodyScroll(newVal);
+      });
 
       onMounted(() => {
         const savedPreference = localStorage.getItem('dontShowWelcomePopup');
         if (savedPreference === 'true') {
           showPopup.value = false;
+        } else {
+          toggleBodyScroll(true);
         }
+      });
+
+      onUnmounted(() => {
+        toggleBodyScroll(false);
       });
 
       const closePopup = () => {
