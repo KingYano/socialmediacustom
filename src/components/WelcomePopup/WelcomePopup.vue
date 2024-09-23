@@ -1,7 +1,7 @@
 <template>
   <div v-if="showPopup" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
     <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg mx-auto">
-      <h2 class="text-2xl font-bold mb-4">Bienvenue sur CreapPost !</h2>
+      <h2 class="text-2xl font-bold mb-4">Bienvenue sur CreaPost !</h2>
       <div class="mb-4">
         <p class="mb-3">Créez des cartes graphiques personnalisées en quelques clics !</p>
         <p><span class="font-bold">1.</span> Importez une illustration depuis votre ordinateur.</p>

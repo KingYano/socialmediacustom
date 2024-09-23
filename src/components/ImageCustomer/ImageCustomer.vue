@@ -1,7 +1,7 @@
 <template>
-  <div class="flex h-screen w-screen bg-gray-100">
+  <div class="flex flex-col lg:flex-row h-auto lg:h-screen w-screen bg-gray-100">
     <Parameters
-      class="w-1/3"
+      class="w-full h-auto lg:h-full lg:w-2/5"
       :format="state.format"
       :title="state.title"
       :description="state.description"
@@ -24,7 +24,7 @@
     />
     <Preview
         ref="previewComponentRef"
-        class="w-2/3"
+        class="w-full lg:w-3/5 h-auto lg:h-full"
         :state="state"
         @update:selectedImage="state.selectedImage = $event"
     />

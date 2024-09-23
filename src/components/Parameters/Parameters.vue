@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4 bg-white shadow-md overflow-y-auto">
+  <div class="p-4 bg-white shadow-md lg:overflow-y-auto">
     <h2 class="text-2xl font-bold mb-6">Paramètres : </h2>
 
     <FormatSelector :modelValue="format" @update:modelValue="$emit('update:format', $event)" />
