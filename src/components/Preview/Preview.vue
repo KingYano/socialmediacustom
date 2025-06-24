@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4 bg-gray-200 flex items-center justify-center">
+  <div class="p-4 bg-gray-200 flex items-center justify-center relative h-full">
     <div ref="previewRef" :style="previewStyle" class="relative shadow-lg overflow-hidden rounded-2xl">
       <img :src="selectedImage" alt="Image" class="w-full h-full object-cover" />
       <div :class="textContainerClass">
@@ -13,13 +13,26 @@
         </div>
       </label>
     </div>
+
+    <button
+        @click="showInfoModal = true"
+        class="absolute bottom-6 right-6 bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-105 z-10 cursor-pointer flex items-center justify-center w-12 h-12"
+        title="À propos"
+    >
+      <i class="ri-information-line text-xl"></i>
+    </button>
+
+    <InfoModal
+        :isOpen="showInfoModal"
+        @close="showInfoModal = false"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
   import { computed, ref, defineExpose } from 'vue';
   import type { ImageCustomizerState } from '@/types/type';
-
+  import InfoModal from '@/components/InfoModal/InfoModal.vue';
   import imgSrc from '@/assets/images/image-example.webp';
 
   const props = defineProps<{
@@ -31,6 +44,7 @@
   }>();
 
   const previewRef = ref<HTMLDivElement | null>(null);
+  const showInfoModal = ref(false);
 
   const selectedImage = computed(() => {
     return props.state.selectedImage || imgSrc;
@@ -50,9 +64,9 @@
   function getFormatDimensions(format: string) {
     switch (format) {
       case 'portrait16_9':
-        return { width: 360, height: 640 }; // 16:9
+        return { width: 360, height: 640 };
       case 'instaPortrait':
-        return { width: 480, height: 600 }; // 4:5
+        return { width: 480, height: 600 };
       default:
         return { width: 360, height: 640 };
     }

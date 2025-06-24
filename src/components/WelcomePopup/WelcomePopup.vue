@@ -4,8 +4,8 @@
       <h2 class="text-2xl font-bold mb-4">Bienvenue sur CreaPost !</h2>
       <div class="mb-4">
         <p class="mb-3">Créez des cartes graphiques personnalisées en quelques clics !</p>
-        <p><span class="font-bold">1.</span> Importez une illustration depuis votre ordinateur.</p>
-        <p><span class="font-bold">2.</span> Personnalisez les couleurs pour qu'elles s'harmonisent avec votre style ou votre marque.</p>
+        <p><span class="font-bold">1.</span> Importez une illustration depuis votre téléphone ou ordinateur.</p>
+        <p><span class="font-bold">2.</span> Personnalisez le format suivant votre besoin.</p>
         <p><span class="font-bold">3.</span> Ajoutez du texte pour créer des visuels impactants pour vos projets personnels ou professionnels.</p>
         <p><span class="font-bold">4.</span> Téléchargez votre carte et utilisez-la immédiatement sur vos réseaux sociaux, dans des présentations ou ailleurs.</p>
         <p class="mt-3">Pas besoin d'être designer pour créer des visuels professionnels !</p>
